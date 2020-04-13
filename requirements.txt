@@ -1,0 +1,4 @@
+pandas==1.0.2
+numpy==1.18.1
+pytz==2019.3
+casadi==3.5.1
