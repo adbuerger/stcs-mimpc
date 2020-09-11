@@ -310,8 +310,8 @@ class BinaryApproximation(System):
 
         t_start = time.time()
 
-        self._combina = pycombina.CombinaBnB(self._binapprox)
-        self._combina.solve(**self._solver_options)
+        combina = pycombina.CombinaBnB(self._binapprox)
+        combina.solve(**self._solver_options)
 
         self._runtime = time.time() - t_start
 
