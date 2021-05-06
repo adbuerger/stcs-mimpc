@@ -321,7 +321,7 @@ class Simulator(System):
 
     def _run_step(self, pos, step):
 
-        self._x_data.append( \
+        self._x_data.append(np.squeeze( \
             
             self._integrator(x0 = self.x_data[-1], \
                 p = ca.veccat( \
@@ -330,7 +330,7 @@ class Simulator(System):
                     self.u_data[-1],
                     self.b_data[-1],
                     np.zeros(self.nw)))["xf"]
-        ) 
+        ))
 
     
     def _finalize_simulation_results(self):
