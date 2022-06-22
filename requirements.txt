@@ -1,4 +1,4 @@
 pandas==1.2.4
-numpy==1.20.2
+numpy==1.22.0
 pytz==2021.1
 casadi==3.5.5
