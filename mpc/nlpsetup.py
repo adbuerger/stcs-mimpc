@@ -93,7 +93,7 @@ class NLPSetupBaseClass(System):
         for compiler in self._CXX_COMPILERS:
 
             try:
-                return_status = subprocess.call([" ".join([compiler, "--version"])], shell=True)
+                return_status = subprocess.call([compiler, "--version"], shell=False)
                 if return_status == 0:
                     logging.info("Compiler " + compiler + " found.")
 
@@ -131,10 +131,10 @@ class NLPSetupBaseClass(System):
             else:
                 compiler_flags += self._CXX_FLAG_NO_OPT
 
-            compiler_command = [" ".join([self._compiler] + compiler_flags + \
-                ["-o"] + [path_to_nlp_object] + [path_to_nlp_source_code])]
+            compiler_command = [self._compiler] + compiler_flags + \
+                ["-o"] + [path_to_nlp_object] + [path_to_nlp_source_code]
 
-            return_status = subprocess.call(compiler_command, shell=True)
+            return_status = subprocess.call(compiler_command, shell=False)
 
             if return_status == 0:
 
